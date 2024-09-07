@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "362074906702",
+    "project_id": "visibleoneecommerce",
+    "storage_bucket": "visibleoneecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362074906702:android:f7de29a8c39cb22997231f",
+        "android_client_info": {
+          "package_name": "com.vanzar.visibleone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo-Tehc_eYRo_4WcTLcIQf4ZkTvCjw9wk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
