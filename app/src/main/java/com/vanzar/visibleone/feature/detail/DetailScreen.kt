@@ -127,7 +127,7 @@ fun DetailScreen(
                     model = ImageRequest.Builder(LocalContext.current)
                         .data(shoe.image)
                         .size(coil.size.Size.ORIGINAL)
-                        .error(R.drawable.dummy_red_shoe)// Set the target size to load the image at.
+                        .error(R.drawable.dummy_red_shoe)
                         .build()
                 )
                 LazyColumn(
@@ -226,7 +226,6 @@ fun DetailScreen(
                                 )
                             }
                         }
-
                     }
                     item {
                         Row(
@@ -298,7 +297,7 @@ fun DetailScreen(
                                 contentPadding = PaddingValues(horizontal = 16.dp),
                                 horizontalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
-                                items(dummyShoeSizes) { size ->
+                                items(shoe.sizes) { size ->
                                     SizeItem(
                                         size.copy(
                                             isSelected = size.id == uiState.selectedSize
@@ -573,7 +572,7 @@ fun SizeItem(
     onClickSize: (Size) -> Unit
 ) {
     Surface(
-        color = if (size.isSelected) Orange else GRAY_50.copy(alpha = 0.2f),
+        color = if (size.isSelected) Orange else GRAY_50.copy(alpha = 0.3f),
         modifier = Modifier
             .width(60.dp)
             .height(40.dp),

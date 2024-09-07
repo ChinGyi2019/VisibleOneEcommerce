@@ -90,10 +90,7 @@ dependencies {
 
     // Arrow Core
     implementation(libs.arrow)
-    // Firebase
-//    implementation(platform(libs.firebase.bom))
-//    implementation(libs.firebase.analytics)
-//    implementation(libs.firebase.storage)
+    implementation(libs.accompanist)
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("com.google.firebase:firebase-auth")

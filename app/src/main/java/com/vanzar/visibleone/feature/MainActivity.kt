@@ -12,6 +12,9 @@ import androidx.compose.runtime.Composable
 import com.vanzar.visibleone.core.design.theme.VisibleOneTheme
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -29,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.*
 import androidx.navigation.toRoute
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.vanzar.visibleone.core.design.theme.Black
 import com.vanzar.visibleone.core.design.theme.Orange
 import com.vanzar.visibleone.core.design.theme.White
@@ -56,12 +60,17 @@ fun MainScreen() {
         Screen.Search,
         Screen.Profile
     )
-
+    rememberSystemUiController().setStatusBarColor(White)
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
             val currentRoute = currentRoute(navController)
-            if (currentRoute in items.map { it.route }) {
+            val showBottomNav = currentRoute in items.map { it.route }
+            AnimatedVisibility(
+                visible = showBottomNav,
+                enter = slideInVertically(initialOffsetY = { it }),
+                exit = slideOutVertically(targetOffsetY = { it })
+            ) {
                 BottomNavigationBar(navController, items)
             }
         }

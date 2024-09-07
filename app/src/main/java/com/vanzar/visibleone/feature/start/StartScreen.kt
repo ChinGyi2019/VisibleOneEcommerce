@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.vanzar.visibleone.R
 import com.vanzar.visibleone.core.design.theme.Dimensions
 import com.vanzar.visibleone.core.design.theme.Orange
@@ -45,7 +46,7 @@ import com.vanzar.visibleone.feature.Screen
 fun StartScreen(
     goToHome: () -> Unit
 ) {
-
+    rememberSystemUiController().setStatusBarColor(White)
     Scaffold {
         Box(
             modifier = Modifier
